@@ -5,7 +5,7 @@
       <input type="text" class="searchInput" v-model="form.codeNm" placeholder="코드명" style="display:table-cell;width:90%"/>
       <input class="searchBtn" type="button" @click="getList" value="조회"/>
     </div>
-    <div class="mt10" style="height:300px">
+    <div class="mt10" style="height:300px;overflow-y: scroll;overflow-x: auto;">
       <div style="text-align:left">
         <span>대표코드</span>
       </div>
@@ -33,7 +33,7 @@
         </thead>
         <tbody>
           <tr v-for="item in codeInfoList" :key="item.commCdId" @click:row="clickRow">
-            <td @click="clickRow(item.commCdId)">{{item.commCdId}}</td>
+            <td style="cursor:pointer" @click="clickRow(item.commCdId)">{{item.commCdId}}</td>
             <td>{{item.commCdNm}}</td>
             <td>{{item.commCdEng}}</td>
             <td>{{item.cdSort}}</td>
